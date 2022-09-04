@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+    function countTheWords(word){
+        let str = word.toLowerCase();//ทำให้ตัวอักษรทุกตัวที่รับมากลายเป็นอักษรพิมพ์เล็ก
+        let x=0;
+        let count=0;
+        function Check(str)
+        {
+            x=str.search('the')
+            while(x!=-1)
+            {
+                count++
+                Check(str.slice(x+1))
+            }
+
+        }
+        Check(str)
+        alert('มี the ทั้งหมด '+count+' คำ')
+
+    }
+</script>
+</head>
+<body>
+    The eight ruler of the Fifth Dynasty in the late 25th century.<br><br>
+    <a href="#" onclick="countTheWords('The eight ruler of the Fifth Dynasty in the late 25th century.')">
+        Click for count 'the'
+    </a>
+</body>
+</html>
